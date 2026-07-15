@@ -1,6 +1,8 @@
 <div align="center">
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f8a7c,100:5850c9&height=160&text=1/10%20Autonomous%20Race%20Car&animation=fadeIn&fontColor=ffffff&fontSize=42&fontAlignY=38&desc=ROS%202%20%C2%B7%20LiDAR%20%C2%B7%20micro-ROS&descAlignY=58&descSize=16" />
+</div>
 
-# 🏎️ URRC 1/10 자율주행 레이스카
+<div align="center">
 
 **ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행 스택**
 
@@ -27,19 +29,33 @@
 ## 🗺 전체 아키텍처
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {
+  'primaryColor':'#f4f6f8','primaryBorderColor':'#aeb8c2','primaryTextColor':'#1a2230',
+  'lineColor':'#94a3b8','fontFamily':'Pretendard, -apple-system, Segoe UI, sans-serif','fontSize':'14px'
+}}}%%
 flowchart LR
-    subgraph SENSE[센서]
-        CAM["카메라"] --> LD["차선 인식\n(BEV+Sliding Window)"]
-        LID["LiDAR"] --> LDET["장애물/ROI 인지"]
+    classDef sense fill:#e4f6f3,stroke:#0f8a7c,stroke-width:1.4px,color:#0b5c52;
+    classDef ctrl  fill:#ecebfa,stroke:#5850c9,stroke-width:1.4px,color:#332e7a;
+    classDef motor fill:#fbe9e6,stroke:#c14a3c,stroke-width:1.4px,color:#7a2e24;
+
+    subgraph SENSE[" 📡 센서 "]
+        direction TB
+        CAM(["📷 카메라"]) --> LD(["차선 인식<br/>BEV · Sliding Window"])
+        LID(["📡 LiDAR"]) --> LDET(["장애물 · ROI 인지"])
     end
-    subgraph CTRL[제어]
-        LD --> PP["Pure Pursuit\n(동적 Lookahead)"]
+    subgraph CTRL[" 🧠 제어 "]
+        direction TB
+        LD --> PP(["Pure Pursuit<br/>동적 Lookahead"])
         LDET --> PP
-        JOY["조이스틱"] --> MUX["MUX 통합 제어"]
+        JOY(["🎮 조이스틱"]) --> MUX(["MUX 통합 제어"])
         PP --> MUX
     end
-    MUX -->|micro-ROS Serial| OPENCR["OpenCR\n모터·조향 구동"]
-    OPENCR -.실측 피드백.-> PP
+    MUX -- "micro-ROS Serial" --> OPENCR(["⚙️ OpenCR<br/>모터 · 조향 구동"])
+    OPENCR -. "실측 피드백" .-> PP
+
+    class CAM,LID,LD,LDET sense
+    class JOY,PP,MUX ctrl
+    class OPENCR motor
 ```
 
 ---
@@ -52,10 +68,14 @@ flowchart LR
 자율주행(Pure Pursuit)과 수동 조이스틱 명령을 하나의 최종 제어 명령으로 안전하게 중재하는 노드입니다.
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {
+  'primaryColor':'#ecebfa','primaryBorderColor':'#5850c9','primaryTextColor':'#332e7a',
+  'lineColor':'#94a3b8','fontFamily':'Pretendard, -apple-system, Segoe UI, sans-serif','fontSize':'14px'
+}}}%%
 flowchart LR
-    PP["Pure Pursuit"] -- "drive_cmd\nsteer_cmd" --> MUX["MUX 노드\n(50Hz)"]
-    JOY["조이스틱"] -- "drive_cmd\nsteer_cmd\nactive" --> MUX
-    MUX -- "최종 명령" --> AGENT["micro-ROS Agent"]
+    PP(["Pure Pursuit"]) -- "drive_cmd<br/>steer_cmd" --> MUX(["MUX 노드<br/>50 Hz"])
+    JOY(["🎮 조이스틱"]) -- "drive_cmd<br/>steer_cmd<br/>active" --> MUX
+    MUX -- "최종 명령" --> AGENT(["micro-ROS Agent"])
 ```
 
 - **중재 로직**: 조이스틱 활성 신호가 최근 0.6초 이내면 조이스틱 우선, 아니면 자율주행 명령 사용
@@ -69,11 +89,15 @@ flowchart LR
 상위 PC의 ROS 2(DDS) 네트워크와 임베디드 보드(OpenCR)를 micro-ROS로 연결해, 제어 계층과 액추에이터 구동 계층을 분리한 실시간 제어 아키텍처입니다.
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {
+  'primaryColor':'#fbe9e6','primaryBorderColor':'#c14a3c','primaryTextColor':'#7a2e24',
+  'lineColor':'#94a3b8','fontFamily':'Pretendard, -apple-system, Segoe UI, sans-serif','fontSize':'14px'
+}}}%%
 flowchart LR
-    MUX["MUX 노드"] --> AGENT["micro-ROS Agent\n(Serial, 115200bps)"]
-    AGENT <-- "micro-ROS\nSerial Transport" --> OPENCR["OpenCR 펌웨어"]
-    OPENCR -- "실측 피드백" --> PP["상위 제어 로직"]
-    OPENCR -.구동.-> MOTOR[["모터 / 조향 서보"]]
+    MUX(["MUX 노드"]) --> AGENT(["micro-ROS Agent<br/>Serial · 115200 bps"])
+    AGENT <-- "micro-ROS<br/>Serial Transport" --> OPENCR(["⚙️ OpenCR 펌웨어"])
+    OPENCR -- "실측 피드백" --> PP(["상위 제어 로직"])
+    OPENCR -. "구동" .-> MOTOR(["🔧 모터 / 조향 서보"])
 ```
 
 - **PC ↔ 보드 브리지**: 시리얼 transport 기반 DDS–micro-ROS 브리지 구성
@@ -88,11 +112,15 @@ flowchart LR
 차선 곡률·조향각·주행 속도에 따라 Pure Pursuit의 Lookahead 거리(Ld)와 LiDAR 인식 ROI를 실시간으로 함께 가변시켜, 고속 직선 구간의 안정성과 저속 코너 구간의 추종 성능을 동시에 확보하는 로직입니다.
 
 ```mermaid
+%%{init: {'theme':'base', 'themeVariables': {
+  'primaryColor':'#fbf0dc','primaryBorderColor':'#b5790a','primaryTextColor':'#6b4a08',
+  'lineColor':'#94a3b8','fontFamily':'Pretendard, -apple-system, Segoe UI, sans-serif','fontSize':'14px'
+}}}%%
 flowchart TD
-    LANE["차선 각도"] --> PP["동적 Lookahead 계산"]
-    PP -- "Ld" --> ROI["LiDAR ROI 반경 스케일링"]
+    LANE(["차선 각도"]) --> PP(["동적 Lookahead 계산"])
+    PP -- "Ld" --> ROI(["LiDAR ROI 반경<br/>스케일링"])
     ROI -- "근접 위험" --> PP
-    LANE --> SHAPE["ROI 형상 전환\n(사각형 ↔ 부채꼴)"]
+    LANE --> SHAPE(["ROI 형상 전환<br/>사각형 ↔ 부채꼴"])
 ```
 
 - **동적 Ld 계산**: 차선 각도가 임계값을 넘으면 최대 각도 구간까지 선형으로 Ld를 최소값까지 축소, 속도 피드백으로 Ld 상한도 별도 캡핑
