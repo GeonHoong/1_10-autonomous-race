@@ -4,6 +4,8 @@
 
 <div align="center">
 
+# 🏎️ 1/10 자율주행 레이스카
+
 **ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행 스택**
 
 ![ROS2](https://img.shields.io/badge/ROS%202-22314E?style=flat-square&logo=ros&logoColor=white)
@@ -159,5 +161,3 @@ Autodesk Inventor로 1/10 스케일 섀시를 직접 설계하고, 실제 부품
 | LiDAR-카메라 퓨전 | 캘리브레이션 도구 및 좌표계 정합, 장애물 클러스터링/추적 |
 | 시스템 구성 | ROS 2 다중 노드 launch 체이닝, 실시간 파라미터 튜닝 인터페이스 |
 
-## 현재 시스템 한계
-- 3km/h 이상 주행 시 불안정 (LiDAR 스캔 주기상 한계)
