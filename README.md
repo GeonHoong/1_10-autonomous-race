@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🏎️ URRC 1/10 자율주행 레이스카
+# 🏎️ 1/10 자율주행 레이스카
 
 **ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행 스택**
 
