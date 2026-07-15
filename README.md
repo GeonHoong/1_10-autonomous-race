@@ -103,6 +103,25 @@ flowchart TD
 
 ---
 
+## 🔧 하드웨어 (Hardware)
+
+Autodesk Inventor로 1/10 스케일 섀시를 직접 설계하고, 실제 부품으로 조립·구동까지 진행했습니다.
+
+### 설계 (CAD)
+<!-- TODO: Inventor 설계 이미지로 교체. 예) assets/hardware/design.png -->
+<p align="center"><img src="./assets/hardware/design.png" width="640" alt="Autodesk Inventor 섀시 설계 이미지 (추가 예정)" /></p>
+
+### 실제 제작
+<!-- TODO: 실제 조립된 RC카 사진으로 교체. 여러 장이면 행을 추가 -->
+<p align="center"><img src="./assets/hardware/build.jpg" width="640" alt="실제 조립된 RC카 사진 (추가 예정)" /></p>
+
+### 🎥 작동 영상
+<!-- TODO: 유튜브 등에 업로드 후 아래 링크와 썸네일 이미지 경로를 교체
+     [![작동 영상](./assets/hardware/video_thumb.jpg)](https://youtu.be/영상ID) -->
+> 작동 영상 추가 예정
+
+---
+
 ## 📎 그 외 구현 요소 (간략)
 
 | 구성 요소 | 내용 |
@@ -110,7 +129,6 @@ flowchart TD
 | 차선 인식 | BEV 변환 + HSV 세그멘테이션 + Sliding Window 기반 실시간 차선 검출 (OpenCV, C++) |
 | Pure Pursuit 제어 | 차선 모델 기반 조향 계산, 차선 변경 FSM, TTC 기반 속도 제어 |
 | LiDAR-카메라 퓨전 | 캘리브레이션 도구 및 좌표계 정합, 장애물 클러스터링/추적 |
-| 하드웨어 | Autodesk Inventor 기반 1/10 스케일 RC카 섀시 설계 |
 | 시스템 구성 | ROS 2 다중 노드 launch 체이닝, 실시간 파라미터 튜닝 인터페이스 |
 
 ## 현재 시스템 한계
