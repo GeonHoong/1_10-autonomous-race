@@ -36,7 +36,7 @@
 
 | 담당 | 역할 |
 |---|---|
-| 김건홍 ([@GeonHoong](https://github.com/GeonHoong)) | 하드웨어(섀시) 설계 총괄, MUX 통합 제어, micro-ROS 모터 제어 아키텍처, LiDAR Lookahead/ROI 가변 제어 |
+| 김건홍 (팀장, [@GeonHoong](https://github.com/GeonHoong)) | 하드웨어 및 소프트웨어 총괄 — 하드웨어(섀시) 설계, MUX 통합 제어, micro-ROS 모터 제어 아키텍처, LiDAR Lookahead/ROI 가변 제어 |
 | 공동 개발자 | ROS 2 자율주행 노드, BEV 변환, Pure Pursuit 제어, RPLIDAR 연동 |
 
 ## 🗺 전체 아키텍처
