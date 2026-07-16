@@ -6,7 +6,7 @@
 
 # 🏎️ 1/10 자율주행 레이스카
 
-**ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행**
+**Raspberry Pi 5 · ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행**
 
 ![ROS2](https://img.shields.io/badge/ROS%202-22314E?style=flat-square&logo=ros&logoColor=white)
 ![micro-ROS](https://img.shields.io/badge/micro--ROS-1E8449?style=flat-square)
