@@ -153,10 +153,16 @@ OpenCR 모터 드라이버 배선, 카메라 인식 테스트, 전체 시스템 
 </p>
 
 ### 🎥 작동 영상
+<!-- GitHub README는 <video src> 태그를 렌더링하지 않아, 썸네일 클릭 시 mp4가 열리는 링크 방식으로 대체 -->
 <p align="center">
-  <video src="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-1.mp4" width="480" controls></video>
-  <video src="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-2.mp4" width="480" controls></video>
+  <a href="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-1.mp4">
+    <img src="./assets/hardware/drive-test-1-thumb.jpg" width="45%" alt="▶ 주행 테스트 영상 1 (클릭 시 재생)" />
+  </a>
+  <a href="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-2.mp4">
+    <img src="./assets/hardware/drive-test-2-thumb.jpg" width="45%" alt="▶ 주행 테스트 영상 2 (클릭 시 재생)" />
+  </a>
 </p>
+<p align="center"><sub>썸네일 클릭 시 새 탭에서 영상이 재생됩니다.</sub></p>
 
 ---
 
