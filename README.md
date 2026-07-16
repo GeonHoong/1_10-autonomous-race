@@ -128,8 +128,13 @@ flowchart TD
 Autodesk Inventor로 1/10 스케일 섀시를 직접 설계하고, 실제 부품으로 조립·구동까지 진행했습니다.
 
 ### 설계 (CAD)
-<!-- TODO: Inventor 설계 이미지로 교체. 예) assets/hardware/design.png -->
-<p align="center"><img src="./assets/hardware/design.png" width="640" alt="Autodesk Inventor 섀시 설계 이미지 (추가 예정)" /></p>
+Autodesk Inventor로 설계한 섀시 모델입니다. LiDAR·카메라 마운트, 전장 배치, 서스펜션 구조를 3D로 먼저 설계한 뒤 제작에 들어갔습니다.
+
+<p align="center">
+  <img src="./assets/hardware/design-01.png" width="32%" alt="CAD 설계 - 전방 아이소메트릭 뷰" />
+  <img src="./assets/hardware/design-02.png" width="32%" alt="CAD 설계 - 후방 아이소메트릭 뷰" />
+  <img src="./assets/hardware/design-03.png" width="32%" alt="CAD 설계 - 상단 뷰 (전장 배치)" />
+</p>
 
 ### 제작 과정
 OpenCR 모터 드라이버 배선, 카메라 인식 테스트, 전체 시스템 통합 테스트 등 초기 조립·검증 단계입니다.
