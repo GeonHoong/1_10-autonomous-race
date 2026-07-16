@@ -1,12 +1,12 @@
 <div align="center">
-    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f8a7c,100:5850c9&height=160&text=1/10%20Autonomous%20Race%20Car&animation=fadeIn&fontColor=ffffff&fontSize=42&fontAlignY=38&desc=ROS%202%20%C2%B7%20LiDAR%20%C2%B7%20micro-ROS&descAlignY=58&descSize=16" />
+    <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f8a7c,100:5850c9&height=160&text=1/10%20Autonomous%20Mobility%20Race%20Car&animation=fadeIn&fontColor=ffffff&fontSize=42&fontAlignY=38&desc=ROS%202%20%C2%B7%20LiDAR%20%C2%B7%20micro-ROS&descAlignY=58&descSize=16" />
 </div>
 
 <div align="center">
 
 # 🏎️ 1/10 자율주행 레이스카
 
-**ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행 스택**
+**ROS 2 기반 차선 인식 · LiDAR 인지 · Pure Pursuit 제어 통합 자율주행**
 
 ![ROS2](https://img.shields.io/badge/ROS%202-22314E?style=flat-square&logo=ros&logoColor=white)
 ![micro-ROS](https://img.shields.io/badge/micro--ROS-1E8449?style=flat-square)
