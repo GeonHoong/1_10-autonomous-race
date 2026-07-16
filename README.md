@@ -158,12 +158,12 @@ OpenCR 모터 드라이버 배선, 카메라 인식 테스트, 전체 시스템 
   <img src="./assets/hardware/drive-test-1.gif" width="45%" alt="주행 테스트 영상 1" />
   <img src="./assets/hardware/drive-test-2.gif" width="45%" alt="주행 테스트 영상 2" />
 </p>
-<p align="center"><sub>주행 테스트 1, 2 — 세로 촬영 (9:16)</sub></p>
+<p align="center"><sub>주행 및 차선 변경 영상</sub></p>
 
 <p align="center">
-  <img src="./assets/hardware/drive-test-3-lidar-roi.gif" width="80%" alt="LiDAR ROI 확인 영상" />
+  <img src="./assets/hardware/drive-test-3-lidar-roi.gif" width="80%" alt="LiDAR 가변 ROI rviz 테스트 영상" />
 </p>
-<p align="center"><sub>LiDAR ROI 확인 — 가로 화면 녹화 영상이라 별도 배치</sub></p>
+<p align="center"><sub>LiDAR 가변 ROI rviz 테스트 영상</sub></p>
 
 ---
 
