@@ -34,6 +34,11 @@
 
 즉, **여러 대의 차량이 동시에 출발해 앞 차량을 안전하게 차선 변경으로 피하며 지정된 바퀴 수를 먼저 완주하는 것**이 이 프로젝트의 목표이며, 위 3대 핵심 기여(MUX 제어, micro-ROS 모터 제어, LiDAR Lookahead/ROI 가변 제어)는 모두 이 목표를 달성하기 위해 설계되었습니다.
 
+<p align="center">
+  <img src="./assets/hardware/track-map.jpg" width="720" alt="실제 대회 트랙 - 흰색/노란색 차선이 있는 주행 코스" /><br/>
+  <sub>대회 트랙 모습 — 흰색/노란색 차선을 기준으로 차선 유지·변경이 이루어지는 실제 주행 코스</sub>
+</p>
+
 | 담당 | 역할 |
 |---|---|
 | 김건홍 (팀장, [@GeonHoong](https://github.com/GeonHoong)) | 하드웨어 및 소프트웨어 총괄 — 하드웨어(섀시) 설계, MUX 통합 제어, micro-ROS 모터 제어 아키텍처, LiDAR Lookahead/ROI 가변 제어 |
@@ -126,14 +131,27 @@ Autodesk Inventor로 1/10 스케일 섀시를 직접 설계하고, 실제 부품
 <!-- TODO: Inventor 설계 이미지로 교체. 예) assets/hardware/design.png -->
 <p align="center"><img src="./assets/hardware/design.png" width="640" alt="Autodesk Inventor 섀시 설계 이미지 (추가 예정)" /></p>
 
-### 실제 제작
-<!-- TODO: 실제 조립된 RC카 사진으로 교체. 여러 장이면 행을 추가 -->
-<p align="center"><img src="./assets/hardware/build.jpg" width="640" alt="실제 조립된 RC카 사진 (추가 예정)" /></p>
+### 제작 과정
+OpenCR 모터 드라이버 배선, 카메라 인식 테스트, 전체 시스템 통합 테스트 등 초기 조립·검증 단계입니다.
+
+<p align="center">
+  <img src="./assets/hardware/build-01-opencr.jpg" width="32%" alt="OpenCR 모터 드라이버 배선 테스트" />
+  <img src="./assets/hardware/build-02-camera.jpg" width="32%" alt="카메라 인식 테스트" />
+  <img src="./assets/hardware/build-03-full.jpg" width="32%" alt="전체 시스템 통합 테스트" />
+</p>
+
+### 완성
+<p align="center">
+  <img src="./assets/hardware/final-01.jpg" width="32%" alt="완성된 차량 - 내부 전장 구성" />
+  <img src="./assets/hardware/final-02.jpg" width="32%" alt="완성된 차량 - 트랙 위 모습" />
+  <img src="./assets/hardware/final-03.jpg" width="32%" alt="완성된 차량 - URRC 데칼 부착" />
+</p>
 
 ### 🎥 작동 영상
-<!-- TODO: 유튜브 등에 업로드 후 아래 링크와 썸네일 이미지 경로를 교체
-     [![작동 영상](./assets/hardware/video_thumb.jpg)](https://youtu.be/영상ID) -->
-> 작동 영상 추가 예정
+<p align="center">
+  <video src="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-1.mp4" width="480" controls></video>
+  <video src="https://github.com/GeonHoong/1_10-autonomous-race/raw/main/assets/hardware/drive-test-2.mp4" width="480" controls></video>
+</p>
 
 ---
 
